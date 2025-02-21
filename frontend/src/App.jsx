@@ -4,8 +4,7 @@ import io from 'socket.io-client';
 import { auth } from './firebase';
 import { signOut } from 'firebase/auth';
 import './App.css';
-
-const socket = io('http://localhost:5000');
+const socket = io(import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000');
 
 function App() {
   const [peerId, setPeerId] = useState(null);
